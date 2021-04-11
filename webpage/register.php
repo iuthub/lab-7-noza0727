@@ -1,6 +1,7 @@
-<?php  
+<?php
 
 include('connection.php');
+include('controllers/register.php');
 
 ?>
 
@@ -20,11 +21,13 @@ include('connection.php');
 				<ul class="form">
 					<li>
 						<label for="username">Username</label>
-						<input type="text" name="username" id="username" required/>
+						<input type="text" name="username" id="username" required />
+						<span class="error-message"><?= $usernameErrorMessage ?? "" ?></span>
 					</li>
 					<li>
 						<label for="fullname">Full Name</label>
 						<input type="text" name="fullname" id="fullname" required/>
+						<span class="error-message"><?= $fullNameErrorMessage ?? "" ?></span>
 					</li>
 					<li>
 						<label for="email">Email</label>
@@ -33,10 +36,12 @@ include('connection.php');
 					<li>
 						<label for="pwd">Password</label>
 						<input type="password" name="pwd" id="pwd" required/>
+						<span class="error-message"><?= $passwordErrorMessage ?? "" ?></span>
 					</li>
 					<li>
 						<label for="confirm_pwd">Confirm Password</label>
 						<input type="password" name="confirm_pwd" id="confirm_pwd" required />
+						<span class="error-message"><?= $confirmPasswordErrorMessage ?? "" ?></span>
 					</li>
 					<li>
 						<input type="submit" value="Submit" /> &nbsp; Already registered? <a href="index.php">Login</a>
